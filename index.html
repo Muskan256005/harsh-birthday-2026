@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Harsh ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Poppins,sans-serif;background:#080914;color:#fff;overflow-x:hidden}
+.screen{min-height:100vh;display:none;align-items:center;justify-content:center;padding:25px;position:relative;overflow:hidden}
+.screen.active{display:flex}
+.stars{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(#ffd2e3 1px,transparent 1px);background-size:70px 70px,110px 110px;background-position:10px 20px,40px 70px;opacity:.22}
+.container{width:min(950px,95%);position:relative;z-index:2}
+.card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(15px);border-radius:30px;padding:35px;box-shadow:0 25px 70px rgba(0,0,0,.45)}
+h1,h2,h3{font-family:Caveat,cursive}
+h1{font-size:clamp(55px,9vw,95px);line-height:.95}
+h2{font-size:60px}
+p{line-height:1.8;color:#f1e8ed}
+.pink{color:#ff8fb7}.cute{color:#ff9fbe;font-family:Caveat,cursive;font-size:32px}
+.btn{border:none;padding:14px 28px;border-radius:50px;background:#ff6d9d;color:white;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 10px 30px rgba(255,109,157,.3);transition:.25s}
+.btn:hover{transform:translateY(-3px) scale(1.02)}
+.hearts{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.heart{position:absolute;bottom:-50px;font-size:25px;animation:floatHeart 6s linear infinite}
+.sticker-cloud{position:absolute;inset:0;pointer-events:none;z-index:3}
+.sticker-cloud img{position:absolute;max-width:115px;filter:drop-shadow(0 8px 10px rgba(0,0,0,.28));animation:stickerFloat 4s ease-in-out infinite}
+.sticker-cloud img:nth-child(1){left:2%;top:7%;transform:rotate(-10deg);width:90px}
+.sticker-cloud img:nth-child(2){right:3%;top:10%;transform:rotate(8deg);width:92px;animation-delay:.6s}
+.sticker-cloud img:nth-child(3){left:1%;bottom:14%;transform:rotate(7deg);width:85px;animation-delay:1.1s}
+.sticker-cloud img:nth-child(4){right:1%;bottom:18%;transform:rotate(-8deg);width:90px;animation-delay:1.7s}
+.sticker-cloud img:nth-child(5){left:5%;top:42%;transform:rotate(-5deg);width:105px;animation-delay:2.1s}
+.sticker-cloud img:nth-child(6){right:4%;top:43%;transform:rotate(6deg);width:100px;animation-delay:2.5s}
+.sticker-cloud img:nth-child(7){left:13%;bottom:4%;transform:rotate(-5deg);width:70px;animation-delay:3s}
+.sticker-cloud img:nth-child(8){right:12%;bottom:4%;transform:rotate(5deg);width:75px;animation-delay:3.4s}
+@keyframes stickerFloat{0%,100%{translate:0 0}50%{translate:0 -7px}}
+.memory-slide.future-slide{grid-template-columns:1fr}
+.future-card{padding:35px;text-align:center;border-radius:28px;background:linear-gradient(135deg,rgba(255,122,169,.14),rgba(120,90,160,.14));border:1px solid rgba(255,190,215,.2)}
+.future-card .future-title{font-family:Caveat,cursive;font-size:46px;color:#ffd0df}
+.future-card p{max-width:720px;margin:16px auto;font-size:18px}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.video-card{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:16px}
+.video-card video{width:100%;height:520px;object-fit:contain;border-radius:18px;background:#05050a}
+.video-card h3{font-size:34px;color:#ffd0df;margin:10px 0 4px}
+.video-card p{font-size:14px}
+@media(max-width:750px){.sticker-cloud img{max-width:75px}.sticker-cloud img:nth-child(1){width:60px}.sticker-cloud img:nth-child(2){width:62px}.sticker-cloud img:nth-child(3){width:58px}.sticker-cloud img:nth-child(4){width:62px}.sticker-cloud img:nth-child(5){width:70px}.sticker-cloud img:nth-child(6){width:68px}.video-grid{grid-template-columns:1fr}.video-card video{height:520px}}
+@keyframes floatHeart{0%{transform:translateY(0);opacity:0}20%{opacity:1}100%{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+.opening{text-align:center}.bear{font-size:80px;margin-bottom:10px}.opening p{max-width:600px;margin:20px auto 28px;font-size:17px}
+.passcode-box{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.pass-image{background:white;padding:12px 12px 35px;transform:rotate(-2deg);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.pass-image img{width:100%;height:470px;object-fit:cover;display:block}
+.code-area{background:#fff3f7;color:#39232c;padding:35px;border-radius:25px;text-align:center}
+.code-area h2{color:#d84d78}.code-area p{color:#624c55;margin:10px 0}
+.code-inputs{display:flex;justify-content:center;gap:10px;margin:20px 0}
+.code-inputs input{width:50px;height:60px;border:2px solid #f2a0bc;border-radius:12px;text-align:center;font-size:25px;font-weight:bold}
+.error{color:#d84d78;min-height:25px;font-size:13px}
+.birthday{text-align:center}.cake{font-size:90px}.birthday p{max-width:650px;margin:20px auto}
+.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
+.choice{background:#fff2f7;color:#33242a;border-radius:25px;padding:25px;text-align:center;cursor:pointer;transition:.3s}
+.choice:hover{transform:translateY(-8px);box-shadow:0 15px 35px rgba(255,105,155,.3)}
+.choice-icon{font-size:55px}.choice h3{font-size:32px;color:#d64e78}
+.story-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}
+.memory-slide{display:none;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.memory-slide.active{display:grid}
+.polaroid{background:white;padding:12px 12px 40px;box-shadow:0 20px 50px rgba(0,0,0,.5);transform:rotate(-2deg)}
+.polaroid img{width:100%;height:500px;object-fit:cover;display:block}
+.memory-text{font-family:Caveat,cursive;font-size:38px;color:#ffd0df;line-height:1.25}
+.memory-subtext{margin-top:15px}
+.slider-controls{display:flex;justify-content:space-between;align-items:center;margin-top:25px}
+.dots{display:flex;gap:8px}.dot{width:9px;height:9px;background:#ffffff44;border-radius:50%}.dot.active{background:#ff83ad}
+.video-box{background:rgba(255,255,255,.05);border-radius:20px;padding:18px;text-align:center}
+.video-box video{width:100%;max-height:560px;border-radius:15px;background:#000;display:block}
+.video-placeholder{padding:70px 20px;border:2px dashed #ff91b8;border-radius:18px;color:#ffd2df}
+.letter-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:25px}
+.letter{background:#fff3e9;color:#34272b;padding:30px;border-radius:12px;box-shadow:0 15px 35px rgba(0,0,0,.35)}
+.letter h3{color:#d44e77;font-size:35px;margin-bottom:10px}.letter p{color:#4e4145;font-size:14px}
+.final{text-align:center}
+.child-photo{width:min(430px,90vw);height:500px;margin:25px auto;background:white;padding:12px 12px 35px;box-shadow:0 20px 60px rgba(0,0,0,.6);transform:rotate(-2deg);overflow:hidden}
+.child-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.funny-box{max-width:700px;margin:25px auto;padding:25px;background:#fff1f6;color:#39252c;border-radius:22px;text-align:left}
+.funny-box p{color:#4e4145;margin-bottom:12px}
+.love{text-align:center;font-family:Caveat,cursive;color:#d94f78;font-size:42px}
+.final-message{text-align:center}.final-message .big-heart{font-size:90px}
+.pop{animation:pop .7s ease}
+@keyframes pop{0%{opacity:0;transform:scale(.85)}100%{opacity:1;transform:scale(1)}}
+@media(max-width:750px){
+.card{padding:22px}.passcode-box{grid-template-columns:1fr}.pass-image img{height:350px}
+.choices{grid-template-columns:1fr}.memory-slide{grid-template-columns:1fr}
+.polaroid img{height:400px}.letter-grid{grid-template-columns:1fr}h1{font-size:60px}h2{font-size:48px}
+}
+</style>
+</head>
+<body>
+
+<section class="screen active" id="opening">
+<div class="stars"></div><div class="hearts"></div>
+<div class="container"><div class="card opening pop">
+<div class="bear">🧸❤️</div>
+<div class="cute">Hey Harsh...</div>
+<h1>Someone made<br>a little something<br>for you.</h1>
+<p>It's not just a birthday wish...<br>it's a tiny piece of my heart. 💌</p>
+<button class="btn" onclick="showScreen('passcode')">Tap to enter ❤️</button>
+</div></div>
+</section>
+
+<section class="screen" id="passcode">
+<div class="stars"></div>
+<div class="container"><div class="card passcode-box pop">
+<div class="pass-image"><img src="assets/spiderman.jpg" alt="Spider-Man memory"></div>
+<div class="code-area">
+<div style="font-size:45px">🔐</div>
+<h2>A little secret...</h2>
+<p>Before we begin,<br>enter the secret code.</p>
+<div class="code-inputs">
+<input id="code1" maxlength="1"><input id="code2" maxlength="1"><input id="code3" maxlength="1"><input id="code4" maxlength="1">
+</div>
+<div class="error" id="error"></div>
+<button class="btn" onclick="checkCode()">Unlock my surprise ✨</button>
+<p style="font-size:12px;margin-top:15px">Hint: a little secret between us 😉</p>
+</div>
+</div></div>
+</section>
+
+<section class="screen" id="birthday">
+<div class="stars"></div><div class="hearts"></div>
+<div class="sticker-cloud" aria-hidden="true"><img src="assets/sticker_bow.png"><img src="assets/sticker_heart_balloons.png"><img src="assets/sticker_ghosts.png"><img src="assets/sticker_couple.png"></div>
+<div class="container"><div class="card birthday pop">
+<div class="cake">🎂</div><div class="cute">It's your day!</div>
+<h1>HAPPY BIRTHDAY,<br><span class="pink">HARSH!</span> ❤️</h1>
+<p>Today is all about you.<br>And yes... I made you click through a whole website because one normal “Happy Birthday” was clearly not enough. 😂❤️</p>
+<button class="btn" onclick="showScreen('choices')">Show me my surprises →</button>
+</div></div>
+</section>
+
+<section class="screen" id="choices">
+<div class="stars"></div>
+<div class="container"><div class="card pop">
+<div class="cute" style="text-align:center">These are for you! 💌</div>
+<p style="text-align:center">Choose one and discover your surprise...</p>
+<div class="choices">
+<div class="choice" onclick="showScreen('memories')"><div class="choice-icon">📸</div><h3>Our Memories</h3><p style="color:#6d5961">our little story • past → present → future ❤️</p></div>
+<div class="choice" onclick="showScreen('video')"><div class="choice-icon">🎥</div><h3>A Little Video</h3><p style="color:#6d5961">press play 🎬</p></div>
+<div class="choice" onclick="showScreen('letter')"><div class="choice-icon">💌</div><h3>Something I Feel</h3><p style="color:#6d5961">read this slowly 🥹</p></div>
+</div>
+</div></div>
+</section>
+
+<section class="screen" id="memories">
+<div class="stars"></div>
+<div class="sticker-cloud" aria-hidden="true">
+<img src="assets/sticker_bear_roses.png"><img src="assets/sticker_ghosts.png"><img src="assets/sticker_cat.png"><img src="assets/sticker_bow.png">
+<img src="assets/sticker_couple.png"><img src="assets/sticker_heart_balloons.png"><img src="assets/sticker_ghost.png"><img src="assets/sticker_bears.png">
+</div>
+<div class="container"><div class="card pop">
+<div class="story-header">
+<div><div class="cute">Our little memories 📸</div><div style="font-size:13px;opacity:.7">Only two little moments...</div></div>
+<button class="btn" onclick="showScreen('choices')">Back</button>
+</div>
+
+<!-- MEMORY FLOW: PAST → PRESENT → FUTURE -->
+<div class="memory-slide active">
+<div class="polaroid"><img src="assets/couple.jpg" alt="Our photo"></div>
+<div><div class="memory-text">Some moments were simple... but they became some of my favourite memories. ❤️</div>
+<div class="memory-subtext">We had our little moments, our laughs, our random talks — and I still smile whenever I think about them.</div><div class="cute" style="margin-top:18px">PAST • the moments we made 🥹</div></div>
+</div>
+
+<div class="memory-slide">
+<div class="polaroid"><img src="assets/cartoon.jpg" alt="Our cartoon memory"></div>
+<div><div class="memory-text">Even our cartoon version became a tiny part of our story. 😂❤️</div>
+<div class="memory-subtext">We had memories that were silly, sweet and completely ours — and somehow, even the smallest ones mattered.</div><div class="cute" style="margin-top:18px">PAST • little memories ✨</div></div>
+</div>
+
+<div class="memory-slide">
+<div class="polaroid"><img src="assets/imagined_bike.png" alt="Imagined bike ride together"></div>
+<div><div class="memory-text">Even now, a bike ride with you feels like my favourite kind of escape. 🏍️❤️</div>
+<div class="memory-subtext">Just you, me, the open road and a little wind — when I'm with you, the rest of the world feels far away.</div><div class="cute" style="margin-top:18px">PRESENT • my favourite feeling 🫶🏻</div></div>
+</div>
+
+<div class="memory-slide">
+<div class="polaroid"><img src="assets/imagined_hug.jpg" alt="Imagined safe-place hug"></div>
+<div><div class="memory-text">Your arms are my safe place. 🫂❤️</div>
+<div class="memory-subtext">When I'm close to you, I don't worry about the world for a while. Somehow, everything feels a little quieter.</div><div class="cute" style="margin-top:18px">PRESENT • where I feel safe 🌙</div></div>
+</div>
+
+<div class="memory-slide future-slide">
+<div class="future-card">
+<div class="future-title">And I hope there is still so much waiting for us... 🌙</div>
+<p>I hope we will have many more bike rides, random conversations, warm hugs, silly moments and memories that we will look back on years from now.</p>
+<p>I hope we will keep finding little reasons to smile, wherever life takes us.</p>
+<div class="cute" style="margin-top:20px">FUTURE • more little moments, more memories, more us. ❤️</div>
+<div style="font-size:54px;margin-top:18px">🏍️ 🫂 🌌 💗</div>
+</div>
+</div>
+
+<div class="slider-controls">
+<button class="btn" onclick="changeMemory(-1)">← Previous</button>
+<div class="dots" id="dots"></div>
+<button class="btn" onclick="changeMemory(1)">Next →</button>
+</div></div></div>
+</section>
+
+<section class="screen" id="video">
+<div class="stars"></div>
+<div class="container"><div class="card pop">
+<div class="story-header">
+<div><div class="cute">A little video for you 🎥</div><div style="font-size:13px;opacity:.7">Some moments are better when they move. ❤️</div></div>
+<button class="btn" onclick="showScreen('choices')">Back</button>
+</div>
+
+<div class="video-grid">
+<div class="video-card">
+<video controls playsinline preload="metadata"><source src="assets/ourvideo1.mp4" type="video/mp4"></video>
+<h3>A little us... 🥹</h3>
+<p>We had our silly little moments, and somehow they became memories I still love.</p>
+</div>
+<div class="video-card">
+<video controls playsinline preload="metadata"><source src="assets/ourvideo2.mp4" type="video/mp4"></video>
+<h3>One more memory ❤️</h3>
+<p>And even now, these little moments make me smile. I'm happy they are a part of our story.</p>
+</div>
+</div>
+
+<div style="text-align:center;margin-top:26px">
+<div class="memory-text">Past moments. Present feelings. Future memories. ❤️</div>
+<p>Two little videos, because one was obviously not enough. 😂🫶🏻</p>
+</div>
+</div></div>
+</section>
+
+<section class="screen" id="letter">
+<div class="stars"></div>
+<div class="container"><div class="card pop">
+<div class="story-header">
+<div><div class="cute">Something I feel... 💌</div><div style="font-size:13px;opacity:.7">Read this one slowly — it is a little piece of my heart. ❤️</div></div>
+<button class="btn" onclick="showScreen('choices')">Back</button>
+</div>
+
+<div class="letter-grid">
+<div class="letter"><h3>My wishes for you... ❤️</h3>
+<p>First of all, I just want to wish you a very, very happy birthday. I hope this new year of your life brings you endless happiness, peace, success, and all the beautiful things you truly deserve.<br><br>May you achieve every goal you have been working towards and may all your dreams slowly turn into reality. I hope you always have the courage to choose what makes you happy, the strength to face every difficult phase, and the confidence to believe in yourself even when things don't go as planned.</p></div>
+
+<div class="letter"><h3>You are special... 🫶🏻</h3>
+<p>And honestly, Harsh, you are one of the best people the universe has ever brought into my life. ❤️ You may not realize how special you are to me, but having you as a part of my life has always made me happy.<br><br>I feel genuinely lucky that our paths crossed and you became such an important part of my world.</p></div>
+
+<div class="letter"><h3>For your future... ✨</h3>
+<p>I genuinely want to see you succeed in everything you do. I wish you good health, a successful career, financial stability, beautiful experiences, genuine people around you, and countless reasons to smile.<br><br>I hope your parents always feel proud of you. I hope you build the life you've always wanted and surround yourself with people who genuinely value you.</p></div>
+
+<div class="letter"><h3>And finally... 💗</h3>
+<p>Most importantly, I hope you find peace — the kind where you feel satisfied with your life, proud of your journey, and happy with the person you are becoming.<br><br>May life always be kind to you, may your heart always have reasons to smile, and may you always have someone beside you who makes you feel as special as you truly are.<br><br><b>Happy Birthday to one of the most special people in my life. ❤️</b></p></div>
+</div>
+
+<div style="text-align:center;margin-top:30px"><button class="btn" onclick="showScreen('last')">Wait... there's one more thing 👀</button></div>
+</div></div>
+</section>
+
+<section class="screen" id="last">
+<div class="stars"></div>
+<div class="container"><div class="card final pop">
+<div class="cute">Wait... 👀</div>
+<h2>There's one last surprise!</h2>
+<p>I saved this one for the end.</p>
+<button class="btn" id="openChildBtn" onclick="openChildhood()">✨ OPEN YOUR LAST SURPRISE ✨</button>
+
+<div id="childContent" style="display:none">
+<div class="child-photo"><img src="assets/childhood.jpg" alt="Harsh childhood photo"></div>
+
+<div class="funny-box">
+<p><b>Awww... bachpan mein toh bada shareef aur innocent lagta tha tu 😂❤️</b></p>
+<p>Pic dekh ke lag raha hai jaise duniya ka sabse seedha-saadha bachcha ho... <b>ab pata nahi ye saari sharafat aur innocence kahan gayi?</b> 😭😂</p>
+<p>Ab toh tere nakhre bhi khatam hone ka naam nahi lete 😒😂<br>But koi nahi...</p>
+<p><b>Itne saare nakhron ke baad bhi, tu mera favourite hi rahega. 🫶🏻❤️</b></p>
+<p>Maybe bachpan wala tu cute tha, but aaj wala tu... meri life ka ek bahut special part hai. 🥹❤️</p>
+<p>So yes... keep your nakhre, keep annoying me, because somehow...</p>
+<div class="love">I still love you. ❤️</div>
+</div>
+
+<button class="btn" onclick="showScreen('final')">One last click... 🎂</button>
+</div>
+</div></div>
+</section>
+
+<section class="screen" id="final">
+<div class="stars"></div><div class="hearts"></div>
+<div class="sticker-cloud" aria-hidden="true"><img src="assets/sticker_bear_roses.png"><img src="assets/sticker_bow.png"><img src="assets/sticker_heart_balloons.png"><img src="assets/sticker_couple.png"></div>
+<div class="container"><div class="card final-message pop">
+<div class="big-heart">🎂❤️✨</div>
+<div class="cute">For my favourite person...</div>
+<h1>HAPPY BIRTHDAY,<br><span class="pink">HARSH!</span> ❤️</h1>
+<p>May this be the beginning of your happiest, most successful and most beautiful year yet.</p>
+<p style="font-family:Caveat,cursive;font-size:42px;color:#ffd0df">Love you! 🫶🏻❤️</p>
+<button class="btn" onclick="location.reload()">Replay the surprise ↻</button>
+</div></div>
+</section>
+
+<script>
+function showScreen(id){
+    document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0,0);
+}
+
+const inputs=[
+    document.getElementById('code1'),
+    document.getElementById('code2'),
+    document.getElementById('code3'),
+    document.getElementById('code4')
+];
+
+inputs.forEach((input,index)=>{
+    input.addEventListener('input',()=>{
+        if(input.value && index<inputs.length-1) inputs[index+1].focus();
+    });
+});
+
+function checkCode(){
+    const code=inputs.map(x=>x.value).join('');
+    const error=document.getElementById('error');
+
+    if(code==='2308'){
+        error.innerText='';
+        showScreen('birthday');
+        confetti();
+    }else{
+        error.innerText='Wrong code... try again 😉';
+    }
+}
+
+let currentMemory=0;
+const memories=document.querySelectorAll('.memory-slide');
+const dots=document.getElementById('dots');
+
+function createDots(){
+    dots.innerHTML='';
+    memories.forEach((_,i)=>{
+        const dot=document.createElement('span');
+        dot.className='dot '+(i===currentMemory?'active':'');
+        dots.appendChild(dot);
+    });
+}
+
+function changeMemory(direction){
+    memories[currentMemory].classList.remove('active');
+    currentMemory+=direction;
+    if(currentMemory<0) currentMemory=memories.length-1;
+    if(currentMemory>=memories.length) currentMemory=0;
+    memories[currentMemory].classList.add('active');
+    createDots();
+}
+createDots();
+
+function openChildhood(){
+    document.getElementById('childContent').style.display='block';
+    document.getElementById('openChildBtn').style.display='none';
+    confetti();
+}
+
+function confetti(){
+    const emojis=['❤️','💗','✨','🎉','⭐','🎂'];
+    for(let i=0;i<55;i++){
+        const item=document.createElement('div');
+        item.innerText=emojis[Math.floor(Math.random()*emojis.length)];
+        item.style.position='fixed';
+        item.style.left=Math.random()*100+'vw';
+        item.style.top='-30px';
+        item.style.fontSize=(12+Math.random()*22)+'px';
+        item.style.zIndex='9999';
+        document.body.appendChild(item);
+
+        const animation=item.animate(
+            [
+                {transform:'translateY(0) rotate(0deg)',opacity:1},
+                {transform:`translateY(${100+Math.random()*90}vh) rotate(${Math.random()*600-300}deg)`,opacity:0}
+            ],
+            {duration:1800+Math.random()*2200}
+        );
+        animation.onfinish=()=>item.remove();
+    }
+}
+
+function createHearts(){
+    document.querySelectorAll('.hearts').forEach(container=>{
+        for(let i=0;i<14;i++){
+            const heart=document.createElement('div');
+            heart.className='heart';
+            heart.innerText='❤️';
+            heart.style.left=Math.random()*100+'%';
+            heart.style.animationDelay=Math.random()*6+'s';
+            heart.style.animationDuration=(4+Math.random()*4)+'s';
+            container.appendChild(heart);
+        }
+    });
+}
+createHearts();
+</script>
+</body>
+</html>
